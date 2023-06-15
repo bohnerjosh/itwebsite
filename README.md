@@ -1,2 +1,5 @@
 # itwebsite
-Repository for my local IT website (hosted on AWS)
+Repository for my local IT website.
+
+Hosted on AWS (https://aws.amazon.com/)
+DNS provided by CloudFlare (https://www.cloudflare.com/)
