@@ -1,0 +1,27 @@
+{% extends "site.html" %}
+
+{% block title %}Services{% endblock %}
+{% block head %} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css')}}">
+{% endblock %} 
+
+{% block content %}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <h1 class="d-flex justify-content-center my-5">Our Services</h1>
+        <div class="col-sm-12 col-md-4 col-lg-3 rounded panel mx-3">
+            <h3 class="header-text text-center my-2">Repair</h3>
+            <p class="body-text text-center">Blue screens? Random error messages? Something out of the ordinary? We understand, and will try to diagnose the problem and get your device back to working condition.</p>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3 rounded panel mx-3">
+            <h3 class="header-text text-center my-2">Consulting</h3>
+            <p class="body-text text-center">Want to set up a home PC or office but don't know where to start? We can recommend furniture and devices for your dream space.</p>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3 rounded panel mx-3">
+            <h3 class="header-text text-center my-2">Recycling</h3>
+            <p class="body-text text-center">Have some tech laying around that you don't need? Bring it to us, and we'll take care of it. From old hard drives to broken mice, we'll take it off your hands.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+.computer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.specs {
+    margin-left: -100px;
+}

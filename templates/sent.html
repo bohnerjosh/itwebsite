@@ -1,0 +1,16 @@
+{% extends "site.html" %}
+
+{% block title %}Sent{% endblock %}
+{% block head %} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sent.css')}}">
+{% endblock %} 
+
+{% block content %}
+<div class="container">
+    <div class="sent d-flex justify-content-center">
+        <p class="my-5">Your inquiry has been received. Thank you for choosing Motown IT Services!</p>
+    </div>
+</div>
+
+{% endblock %}

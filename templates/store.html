@@ -1,0 +1,30 @@
+{% extends "site.html" %}
+
+{% block title %}Store{% endblock %}
+{% block head %} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css')}}">
+{% endblock %} 
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-center row">
+        <h1 class="d-flex justify-content-center my-3">Our Store</h1>
+        <div class="d-flex flex-wrap justify-content-center align-items-center col-lg-3 col-md-4">
+            <h5 class="my-3 d-flex justify-content-center">HP Compaq 8200 ESFF PC</h3>
+            <img src="{{url_for('static', filename='img/store/hp-esff.jpg')}}" height="253" width="450">
+            <p>
+                Specs and price:
+            </p>
+            <pre class="text-center my-3 specs">
+                Intel Core i5 2400
+                8 GB DDR3 Ram
+                SSD or HDD Storage
+                $59
+            </pre>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
