@@ -1,21 +1,15 @@
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify, abort
 import hashlib
-from flask_sqlalchemy import SQLAlchemy
 import os 
 import re
+from pathlib import Path
+from datetime import datetime
 
 email_regex = re.compile(r"^(.+)@(.+)\.(.{3})")
 app = Flask(__name__)
 app.secret_key = b'ABCDEFG#(*JXKNCW:Q"vwads6it7y'
 
-'''
-sqlite_uri = 'sqlite:///' + os.path.abspath(os.path.curdir) + '/test.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = sqlite_uri
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-
-from models import User
-'''
+MESSAGE_DIR = Path(__name__).parent / "messages"
 
 @app.route('/')
 def index():
@@ -49,6 +43,10 @@ def post_contact():
         message = "Message cannot be blank"
 
     if message == "":
+        # save the message
+        fileName = datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + ".txt"
+        with open(str(MESSAGE_DIR / fileName), "w+") as f:
+            f.write(email + "\n" + name + "\n" + inquiry + "\n")
         return render_template("sent.html")
     else:
         return render_template("contact.html", message=message)
